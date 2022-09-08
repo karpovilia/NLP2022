@@ -1,0 +1,25 @@
+name: ci 
+on:
+  push:
+    branches:
+      - main 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: mkdir ~/docs
+      - run: mv * ~/docs
+      - run: mv ~/docs .
+      - run: git clone https://github.com/karpovilia/mkdocs_template.git
+      - run: rm -rf mkdocs_template/.git/
+      - run: rm -rf mkdocs_template/docs/
+      - run: mv mkdocs_template/* .
+      - run: rm -rf mkdocs_template/
+      - run: 'echo "site_name: Глубинное обучение для текстовых данных" >> mkdocs.yml'
+      - run: cat /home/runner/work/NLP2022/NLP2022/mkdocs.yml
+      - run: pip install mkdocs-material
+      - run: mkdocs gh-deploy --force
