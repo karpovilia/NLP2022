@@ -1,6 +1,7 @@
 # Main Page
 
 * [Описание курса](course_description.md)
+* [Страница курса](https://karpovilia.github.io/NLP2022/readme/)
 
 # Расписание
 | Date       | Time  |       | Topic                                                                                                                                                        | Activity   | Group |
