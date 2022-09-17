@@ -6,19 +6,15 @@
 # Расписание
 | Date       | Time  |       | Topic                                                                                                                                                        | Activity   | Group |
 |------------|-------|-------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|-------|
-| 08.09.2022 | 18:10 | 19:30 | Введение в анализ текстов, препроцессинг| Lecture 1 [слайды](https://github.com/karpovilia/NLP2022/raw/main/Lecture%2001%20-%20Introduction/01-intro.pdf)  |       |
+| 08.09.2022 | 18:10 | 19:30 | Введение в анализ текстов, препроцессинг| Lecture 1 [слайды](https://github.com/karpovilia/NLP2022/raw/main/Lecture%2001%20-%20Introduction/01-intro.pdf) [youtube](https://youtu.be/97woeNchw6E) |       |
 | 08.09.2022 | 19:40 | 21:00 | Предобработка текста [1_1_regex.ipynb](https://colab.research.google.com/drive/1NOweTWJlNmjgEsIzlAuBE6M7-GH3MZuh?usp=sharing), [1_2_preprocessing.ipynb](https://colab.research.google.com/drive/1wf45OqaHlC2wLYfuA46s7ok698Y5ByuZ?usp=sharing) | Seminar 1 | 1,2 |
 | 08.09.2022 |       |       | Квиз про бэкграунд| [Quiz](https://docs.google.com/forms/d/e/1FAIpQLScGvDEJ15Le7B-Ti7LRIx9t7FfSwCaDh-j_n33zXfWuSZ-q1Q/viewform)       |       |
-<<<<<<< HEAD
-| 15.09.2022 | 18:10 | 19:30 | Эмбеддинги слов | Lecture 2  |       |
-| 15.09.2022 | 19:40 | 21:00 | Эмбеддинги слов | Seminar 2 | 1,2 |
+| 15.09.2022 | 18:10 | 19:30 | Векторные представления слов [слайды](https://github.com/karpovilia/NLP2022/blob/main/Lecture%2002%20-%20Word%20Embeddings/02-WordEmbeddings.pdf) | Lecture 2  |       |
+| 15.09.2022 | 19:40 | 21:00 | Векторные представления слов [репозиторий](https://github.com/karpovilia/NLP2022/tree/main/Seminar%2002%20-%20Word%20Embeddings) | Seminar 2 | 1,2 |
 
 
 
 
 
 
-=======
-| 15.09.2022 | 18:10 | 19:30 | Векторные представления слов | Lecture 2 [слайды](https://github.com/karpovilia/NLP2022/blob/main/Lecture%2002%20-%20Word%20Embeddings/02-WordEmbeddings.pdf)  |       |
->>>>>>> 438c6010499aa603c26283633774218943bf6063
 
