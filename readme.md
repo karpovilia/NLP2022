@@ -19,7 +19,10 @@
 | 29.09.2022 | 18:10-19:30 | Lecture 04 | Языковые модели | [слайды](https://docs.google.com/presentation/d/1Xgxa1zapby5tN79xJM4A43yF_Ua9urlRTcqviv2G9Cc/edit?usp=sharing), [youtube](https://youtu.be/kwK4pInW6tM)| 1,2 |
 | 29.09.2022 | 19:40-21:00 | Seminar 04 | Языковые модели | [lm.ipynb](https://colab.research.google.com/drive/18VXwwoIyGApkCc6tnsmFtKvqGQHVtdLt?usp=sharing), [youtube](https://youtu.be/f2yAv6N_424) | 1,2 |
 | 29.09.2022 | 19:40-21:00 | Seminar 04 | Языковые модели | [lm.ipynb](https://colab.research.google.com/drive/18VXwwoIyGApkCc6tnsmFtKvqGQHVtdLt?usp=sharing), [youtube](https://youtu.be/nnrVp1ZzxaA) | 1,2 |
-| 06.10.2022 | 18:10-19:30 | Lecture 05 | Машинный перевод | [слайды](https://docs.google.com/presentation/d/1AWRQTRPwkNXtABK9ZuOEiEVUm67lApA1/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true) | 1,2 |
-| 06.10.2022 | 19:40-21:00 | Seminar 05 | Машинный перевод| [sqe2seq.ipynb](https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing) | 1,2 |
-| 06.10.2022 | 19:40-21:00 | Seminar 05 | Машинный перевод| [sqe2seq.ipynb](https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing), [youtube](https://youtu.be/QNO_MlI3uFo) | 1,2 |
+| 06.10.2022 | 18:10-19:30 | Lecture 05 | Машинный перевод | [слайды](https://docs.google.com/presentation/d/1AWRQTRPwkNXtABK9ZuOEiEVUm67lApA1/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true), [youtube](https://youtu.be/1nMEiiaQlkI) | 1,2 |
+| 06.10.2022 | 19:40-21:00 | Seminar 05 | Машинный перевод| [seq2seq.ipynb](https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing), [youtube](https://youtu.be/8dZUzLUjIh0) | 1,2 |
+| 06.10.2022 | 19:40-21:00 | Seminar 05 | Машинный перевод| [seq2seq.ipynb](https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing), [youtube](https://youtu.be/QNO_MlI3uFo) | 1,2 |
+| 13.10.2022 | 18:10-19:30 | Lecture 06 | Transformer | [слайды](https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true) | 1,2 |
+| 13.10.2022 | 19:40-21:00 | Seminar 06 | Transformer | [transformer.ipynb](https://colab.research.google.com/drive/1MoxDB9Jv9CA3P5vSn8hMaOV-zhuQMKdj?usp=sharing) | 1,2 |
+
 
