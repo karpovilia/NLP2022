@@ -24,5 +24,6 @@
 | 06.10.2022 | 19:40-21:00 | Seminar 05 | Машинный перевод| [seq2seq.ipynb](https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing), [видео](https://youtu.be/QNO_MlI3uFo) | 1,2 |
 | 13.10.2022 | 18:10-19:30 | Lecture 06 | Transformer | [слайды](https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true), [видео](https://youtu.be/Z2IGr_C2IIs) | 1,2 |
 | 13.10.2022 | 19:40-21:00 | Seminar 06 | Transformer | [transformer.ipynb](https://colab.research.google.com/drive/1MoxDB9Jv9CA3P5vSn8hMaOV-zhuQMKdj?usp=sharing), [видео](https://youtu.be/jrhJ261vq6A) | 1,2 |
-
+| 20.10.2022 | 18:10-19:30 | Lecture 07 | Bert | [слайды](https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true), [видео]() | 1,2 |
+| 20.10.2022 | 19:40-21:00 | Seminar 07 | Bert | [BERT.ipynb](https://colab.research.google.com/drive/15ICdicUaTxV7Dz8oJ-a7IfLFETUHoDAP?usp=sharing, [видео]() | 1,2 |
 
