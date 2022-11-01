@@ -26,4 +26,5 @@
 | 13.10.2022 | 19:40-21:00 | Seminar 06 | Transformer | [transformer.ipynb](https://colab.research.google.com/drive/1MoxDB9Jv9CA3P5vSn8hMaOV-zhuQMKdj?usp=sharing), [видео](https://youtu.be/jrhJ261vq6A) | 1,2 |
 | 20.10.2022 | 18:10-19:30 | Lecture 07 | Bert | [слайды](https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true), [видео](https://youtu.be/N7c_nODNSvs) | 1,2 |
 | 20.10.2022 | 19:40-21:00 | Seminar 07 | Bert | [BERT.ipynb](https://colab.research.google.com/drive/15ICdicUaTxV7Dz8oJ-a7IfLFETUHoDAP?usp=sharing), [видео](https://youtu.be/Ka3fsJXah_M) | 1,2 |
+| 03.11.2022 | 18:10-19:30 | Lecture 08 | Information Extraction | [slides](https://github.com/karpovilia/NLP2022/raw/main/Week%2008%20–%20Information%20Extraction/08_InformationExtraction.pdf) | 1,2 |
 
