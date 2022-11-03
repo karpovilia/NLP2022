@@ -27,5 +27,5 @@
 | 20.10.2022 | 18:10-19:30 | Lecture 07 | Bert | [слайды](https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&ouid=112816606551634705121&rtpof=true&sd=true), [видео](https://youtu.be/N7c_nODNSvs) | 1,2 |
 | 20.10.2022 | 19:40-21:00 | Seminar 07 | Bert | [BERT.ipynb](https://colab.research.google.com/drive/15ICdicUaTxV7Dz8oJ-a7IfLFETUHoDAP?usp=sharing), [видео](https://youtu.be/Ka3fsJXah_M) | 1,2 |
 | 03.11.2022 | 18:10-19:30 | Lecture 08 | Information Extraction | [slides](https://github.com/karpovilia/NLP2022/raw/main/Week%2008%20–%20Information%20Extraction/08_InformationExtraction.pdf) | 1,2 |
-| 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/17knx0YIjSHzg1ala2Jd4LPnIb3-qqX1i?usp=sharing) | 1,2 |
+| 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/1v2CDCJQGGW0MQDnRoTmLeoO0jb9l7_L9?usp=sharing) | 1,2 |
 
