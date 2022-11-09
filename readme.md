@@ -29,4 +29,4 @@
 | 03.11.2022 | 18:10-19:30 | Lecture 08 | Information Extraction | [slides](https://github.com/karpovilia/NLP2022/raw/main/Week%2008%20–%20Information%20Extraction/08_InformationExtraction.pdf) | 1,2 |
 | 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/1v2CDCJQGGW0MQDnRoTmLeoO0jb9l7_L9?usp=sharing) bonus: [spacy](https://colab.research.google.com/drive/1eLOAGvw9XD3tKAJuqPHkJtMrA-_G2Ay9?usp=sharing) | 1,2 |
 | 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/1v2CDCJQGGW0MQDnRoTmLeoO0jb9l7_L9?usp=sharing), [video](https://youtu.be/nFD-vyVOibM) | 1,2 |
-
+| 10.11.2022 | 18:10-19:30 | Lecture 09 | Dialogue Systems 1 | [notes](https://github.com/karpovilia/NLP2022/blob/main/Week%2009%20-%20Dialogue%20Systems%201/09_ToD_v2.pdf) | 1,2 |
