@@ -30,3 +30,4 @@
 | 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/1v2CDCJQGGW0MQDnRoTmLeoO0jb9l7_L9?usp=sharing) bonus: [spacy](https://colab.research.google.com/drive/1eLOAGvw9XD3tKAJuqPHkJtMrA-_G2Ay9?usp=sharing) | 1,2 |
 | 03.11.2022 | 18:10-19:30 | Seminar 08 | Information Extraction | [ipynb](https://colab.research.google.com/drive/1v2CDCJQGGW0MQDnRoTmLeoO0jb9l7_L9?usp=sharing), [video](https://youtu.be/nFD-vyVOibM) | 1,2 |
 | 10.11.2022 | 18:10-19:30 | Lecture 09 | Dialogue Systems 1 | [notes](https://github.com/karpovilia/NLP2022/blob/main/Week%2009%20-%20Dialogue%20Systems%201/09_ToD_v2.pdf) | 1,2 |
+| 10.11.2022 | 18:10-19:30 | Seminar 09 | Dialogue Systems 1 | [Dialog Systems](https://colab.research.google.com/drive/1G8h09s3wRROFUlRx2RZ7oUsdUV5LpCYi?usp=sharing), [GODEL](https://colab.research.google.com/drive/1YOrbR9Akt_1JR0fl5DD1cxItvHygrzU-?usp=sharing) | 1,2 |
