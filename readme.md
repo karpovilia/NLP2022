@@ -32,3 +32,4 @@
 | 10.11.2022 | 18:10-19:30 | Lecture 09 | Dialogue Systems 1 | [notes](https://github.com/karpovilia/NLP2022/blob/main/Week%2009%20-%20Dialogue%20Systems%201/09_ToD_v2.pdf) | 1,2 |
 | 10.11.2022 | 18:10-19:30 | Seminar 09 | Dialogue Systems 1 | [Dialog Systems](https://colab.research.google.com/drive/1G8h09s3wRROFUlRx2RZ7oUsdUV5LpCYi?usp=sharing), [GODEL](https://colab.research.google.com/drive/1YOrbR9Akt_1JR0fl5DD1cxItvHygrzU-?usp=sharing) | 1,2 |
 | 17.11.2022 | 18:10-19:30 | Lecture 10 | Dialogue Systems 2 | [notes](https://github.com/karpovilia/NLP2022/blob/main/Week%2010%20-%20Dialogue%20Systems%202/10_OpenDialogue.pdf) | 1,2 |
+| 17.11.2022 | 18:10-19:30 | Lecture 10 | Dialogue Systems 2 | [st](https://colab.research.google.com/drive/1QVTUPYdzEOHV_YFVxux5mP-npLlpsr7L?usp=sharing), [qa](https://colab.research.google.com/drive/165E3qLqBh-j23G_HJm0c2C7rNNwNOPfQ?usp=sharing) | 1,2 |
