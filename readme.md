@@ -33,5 +33,5 @@
 | 10.11.2022 | 18:10-19:30 | Seminar 09 | Dialogue Systems 1 | [Dialog Systems](https://colab.research.google.com/drive/1G8h09s3wRROFUlRx2RZ7oUsdUV5LpCYi?usp=sharing), [GODEL](https://colab.research.google.com/drive/1YOrbR9Akt_1JR0fl5DD1cxItvHygrzU-?usp=sharing) | 1,2 |
 | 17.11.2022 | 18:10-19:30 | Lecture 10 | Dialogue Systems 2 | [notes](https://github.com/karpovilia/NLP2022/blob/main/Week%2010%20-%20Dialogue%20Systems%202/10_OpenDialogue.pdf) | 1,2 |
 | 17.11.2022 | 18:10-19:30 | Lecture 10 | Dialogue Systems 2 | [st](https://colab.research.google.com/drive/1QVTUPYdzEOHV_YFVxux5mP-npLlpsr7L?usp=sharing), [qa](https://colab.research.google.com/drive/165E3qLqBh-j23G_HJm0c2C7rNNwNOPfQ?usp=sharing) | 1,2 |
-
 | 24.11.2022 | 18:10-19:30 | Lecture 11 | seq2seq models | [slides](https://github.com/karpovilia/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/10_TS_2021.pdf) | 1,2 |
+| 24.11.2022 | 18:10-19:30 | Seminar 11 | Summarization | [colab](https://colab.research.google.com/drive/1-lFJ0VusD5Cn1BczTcTPFuAJqIWY85_g?usp=sharing) | 1,2 |
