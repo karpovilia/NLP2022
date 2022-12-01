@@ -35,3 +35,6 @@
 | 17.11.2022 | 18:10-19:30 | Lecture 10 | Dialogue Systems 2 | [st](https://colab.research.google.com/drive/1QVTUPYdzEOHV_YFVxux5mP-npLlpsr7L?usp=sharing), [qa](https://colab.research.google.com/drive/165E3qLqBh-j23G_HJm0c2C7rNNwNOPfQ?usp=sharing) | 1,2 |
 | 24.11.2022 | 18:10-19:30 | Lecture 11 | seq2seq models | [slides](https://github.com/karpovilia/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/10_TS_2021.pdf) | 1,2 |
 | 24.11.2022 | 18:10-19:30 | Seminar 11 | Summarization | [colab](https://colab.research.google.com/drive/1-lFJ0VusD5Cn1BczTcTPFuAJqIWY85_g?usp=sharing) | 1,2 |
+| 01.12.2022 | 18:10-19:30 | Lecture 12 | QA | [slides](https://drive.google.com/file/d/1PiBKFWsDo5YaWrM_iLAUTMLAQNK5Pnhd/view) | 1,2 |
+| 01.12.2022 | 18:10-19:30 | Seminar 12 | QA | [colab](https://colab.research.google.com/drive/1DLorq3F9Olbk-v9amSITzp3RyjrvkQTD?usp=sharing) | 1,2 |
+
