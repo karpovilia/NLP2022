@@ -37,4 +37,5 @@
 | 24.11.2022 | 18:10-19:30 | Seminar 11 | Summarization | [colab](https://colab.research.google.com/drive/1-lFJ0VusD5Cn1BczTcTPFuAJqIWY85_g?usp=sharing) | 1,2 |
 | 01.12.2022 | 18:10-19:30 | Lecture 12 | QA | [slides](https://drive.google.com/file/d/1PiBKFWsDo5YaWrM_iLAUTMLAQNK5Pnhd/view) | 1,2 |
 | 01.12.2022 | 18:10-19:30 | Seminar 12 | QA | [colab](https://colab.research.google.com/drive/1DLorq3F9Olbk-v9amSITzp3RyjrvkQTD?usp=sharing) | 1,2 |
-
+| 01.12.2022 | 18:10-19:30 | Lecture 13 | Model Compression |  | 1,2 |
+| 01.12.2022 | 18:10-19:30 | Seminar 13 | Model Compression |  | 1,2 |
