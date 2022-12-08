@@ -22,4 +22,7 @@ jobs:
       - run: 'echo "site_name: Глубинное обучение для текстовых данных" >> mkdocs.yml'
       - run: cat /home/runner/work/NLP2022/NLP2022/mkdocs.yml
       - run: pip install mkdocs-material
+      - run: pip install mkdocs-roamlinks-plugin
+      - run: pip install mkdocs-awesome-pages-plugin
+      - run: pip install mkdocs-localsearch
       - run: mkdocs gh-deploy --force
