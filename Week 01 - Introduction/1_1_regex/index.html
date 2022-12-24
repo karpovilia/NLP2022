@@ -1,0 +1,1641 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+    
+    
+      
+        <title>1 1 regex - Глубинное обучение для текстовых данных</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rematch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Глубинное обучение для текстовых данных" class="md-header__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Глубинное обучение для текстовых данных
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 1 regex
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../course_description/" class="md-tabs__link">
+      Описание курса
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../exam/" class="md-tabs__link">
+      Билеты к экзамену
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../readme/" class="md-tabs__link">
+      Main Page
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Week 01   Introduction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Week%2002%20-%20Word%20Embeddings/main/" class="md-tabs__link">
+        Week 02   Word Embeddings
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Week%2004%20-%20Language%20Models/main/" class="md-tabs__link">
+        Week 04   Language Models
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Week%2005%20-%20Machine%20Translation/mail/" class="md-tabs__link">
+        Week 05   Machine Translation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-tabs__link">
+        Week 13  Model Compression
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Глубинное обучение для текстовых данных" class="md-nav__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Глубинное обучение для текстовых данных
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course_description/" class="md-nav__link">
+        Описание курса
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/" class="md-nav__link">
+        Билеты к экзамену
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme/" class="md-nav__link">
+        Main Page
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Week 01   Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Week 01   Introduction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 01   Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1 1 regex
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        1 1 regex
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rematch" class="md-nav__link">
+    re.match()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    re.search()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refindall" class="md-nav__link">
+    re.findall()
+  </a>
+  
+    <nav class="md-nav" aria-label="re.findall()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Quantifiers" class="md-nav__link">
+    Quantifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Lazy--and-possessivegreedy-matching" class="md-nav__link">
+    Lazy  and possessive/greedy matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Escape-characters" class="md-nav__link">
+    Escape characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resub" class="md-nav__link">
+    re.sub()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    re.compile()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#You-have-the-floor-now" class="md-nav__link">
+    You have the floor now!
+  </a>
+  
+    <nav class="md-nav" aria-label="You have the floor now!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Result" class="md-nav__link">
+    Result:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_2_preprocessing/" class="md-nav__link">
+        1 2 preprocessing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Week 02   Word Embeddings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Week 02   Word Embeddings" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 02   Word Embeddings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2002%20-%20Word%20Embeddings/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Week 04   Language Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Week 04   Language Models" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 04   Language Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2004%20-%20Language%20Models/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Week 05   Machine Translation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Week 05   Machine Translation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 05   Machine Translation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2005%20-%20Machine%20Translation/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Week 13  Model Compression
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Week 13  Model Compression" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Week 13  Model Compression
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-nav__link">
+        Quantization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/03%20-%20Knowledge%20Distillation/" class="md-nav__link">
+        Knowledge Distillation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/04%20Parameter%20sharing/" class="md-nav__link">
+        Parameter sharing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/05%20Matrix%20decomposition/" class="md-nav__link">
+        05 Matrix decomposition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/Index/" class="md-nav__link">
+        Model compression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/Neural%20Architecture%20Search%20%28NAS%29/" class="md-nav__link">
+        Neural Architecture Search (NAS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7" type="checkbox" id="__nav_8_7" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_7">
+          01. Pruning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="01. Pruning" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          01. Pruning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/01.%20Pruning/01%20-%20Pruning%20weights/" class="md-nav__link">
+        01   Pruning weights
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/01.%20Pruning/02%20-%20Pruning%20neurons/" class="md-nav__link">
+        Pruning neurons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/01.%20Pruning/03%20-%20Block%20Prunning/" class="md-nav__link">
+        03   Block Prunning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/01.%20Pruning/04%20-%20Pruning%20heads%20and%20layers/" class="md-nav__link">
+        04   Pruning heads and layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Week%2013%20-Model%20Compression/01.%20Pruning/Index/" class="md-nav__link">
+        Pruning: sparsifying weight matrice
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rematch" class="md-nav__link">
+    re.match()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research" class="md-nav__link">
+    re.search()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refindall" class="md-nav__link">
+    re.findall()
+  </a>
+  
+    <nav class="md-nav" aria-label="re.findall()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Quantifiers" class="md-nav__link">
+    Quantifiers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Lazy--and-possessivegreedy-matching" class="md-nav__link">
+    Lazy  and possessive/greedy matching
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Escape-characters" class="md-nav__link">
+    Escape characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resub" class="md-nav__link">
+    re.sub()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recompile" class="md-nav__link">
+    re.compile()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#You-have-the-floor-now" class="md-nav__link">
+    You have the floor now!
+  </a>
+  
+    <nav class="md-nav" aria-label="You have the floor now!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Result" class="md-nav__link">
+    Result:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1><center>Regular expressions</center></h1>
+
+<p><strong>Regular expression</strong> <em><span class="arithmatex">\(RegExp\)</span></em> — is the specific, standard textual syntax for representing patterns for matching substrings in the text. In other words, it is a sequence of characters that specifies a pattern to search / replace with something those pieces of text that match with it.</p>
+<p><strong>Useful materials:</strong> https://habr.com/ru/post/115825/ and https://habr.com/ru/post/115436/</p>
+<p><img alt="rexexp" src="https://imgs.xkcd.com/comics/regular_expressions.png" /></p>
+<p>Python has a built-in package called <code>re</code>, which can be used to work with Regular Expressions. (you may read the docs <a href="https://docs.python.org/3/library/re.html">here</a>). First, we need to import it, as any other library. Here are listed the most common methods of this library:</p>
+<ul>
+<li>re.match()</li>
+<li>re.search()</li>
+<li>re.findall()</li>
+<li>re.sub()</li>
+<li>re.compile()</li>
+</ul>
+<h3 id="rematch">re.match()<a class="headerlink" href="#rematch" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>This methods checks for a match <strong>only at the beginning of the string</strong>. For instance, if we apply the following pattern 'the' on the text "the cat is on the mat" with the <code>match()</code> method, we will find the first occurence of "the" and the program will end successfully. However, if we are looking for the pattern "cat", the result would be empty. </p>
+<p><code>re.match()</code> accepts two arguments:</p>
+<ul>
+<li>pattern (what are we looking for?)</li>
+<li>string (where we want to search for it?)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">re</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[cmf]an&quot;</span><span class="p">,</span> <span class="s2">&quot;dan&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;[^cmf]an&quot;</span><span class="p">,</span> <span class="s2">&quot;fan&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;(c|m|f)an&quot;</span><span class="p">,</span> <span class="s2">&quot;man&quot;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 3), match=&#39;man&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">re</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 3), match=&#39;the&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>None
+</code></pre></div>
+<p>"cat" is the precise pattern, now let us try to search with general patterns, so we need set ranges for that:</p>
+<ul>
+<li><strong>[A-Z]</strong> — will match <em>any single</em> uppercase letter <span class="arithmatex">\(latin script\)</span></li>
+<li><strong>[a-z]</strong> — will match <em>any single</em> lowercase letter <span class="arithmatex">\(latin script\)</span></li>
+<li><strong>[А-Я]</strong> — will match <em>any single</em> uppercase letter <span class="arithmatex">\(cyrillic script\)</span></li>
+<li><strong>[а-я]</strong> — will match <em>any single</em> lowercase letter <span class="arithmatex">\(cyrillic script\)</span></li>
+<li><strong>[0-9]</strong> or <strong>\d</strong> — one digit</li>
+</ul>
+<p>^ Matches a single character that is not contained within the brackets:
+* <strong>[^0-9]</strong> or <strong>\D</strong> — <em>any single</em> character apart from digit</p>
+<p>Wildcard <strong>.</strong> (dot) — matches any single character.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[a-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 1), match=&#39;t&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[0-9]&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 1), match=&#39;t&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39; the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 1), match=&#39; &#39;&gt;
+</code></pre></div>
+<p>Set ranges can be combined:</p>
+<ul>
+<li><strong>[A-Za-z]</strong> — <em>any single</em> uppercase and lowercase letter <span class="arithmatex">\(latin script\)</span></li>
+<li><strong>[A-Za-z0-9]</strong> — <em>any single</em> uppercase and lowercase letter <span class="arithmatex">\(latin script\)</span> or digit</li>
+<li><strong>[A-Za-z0-9_]</strong> или <strong>\w</strong> — <em>any single</em> uppercase and lowercase letter <span class="arithmatex">\(latin script\)</span> or digit or _</li>
+<li>
+<p><strong>[^A-Za-z0-9_]</strong> или <strong>\W</strong> — anything except uppercase and lowercase letters <span class="arithmatex">\(latin script\)</span>, digits and _</p>
+</li>
+<li>
+<p>You may choose any range from the <a href="https://unicode-table.com/ru/">unicode table</a> like, for example, <strong>[à-ÿ]</strong> </p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[A-Za-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;Uppercase letters&#39;</span><span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[A-Za-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;no uppercase letters&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>(&lt;re.Match object; span=(0, 1), match=&#39;U&#39;&gt;,
+ &lt;re.Match object; span=(0, 1), match=&#39;n&#39;&gt;)
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[A-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;Uppercase letters&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 1), match=&#39;U&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;[А-яЁё]&#39;</span><span class="p">,</span> <span class="s1">&#39;ёжик&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 1), match=&#39;ё&#39;&gt;
+</code></pre></div>
+<h3 id="research">re.search()<a class="headerlink" href="#research" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>While previous method checks for a match only at the beginning of the string, <code>re.search()</code> checks for a match anywhere in the string, however, it returns only the first occurence of the patter. Arguments of this method are the same <code>re.search(pattern, string)</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 3), match=&#39;the&#39;&gt;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(4, 7), match=&#39;cat&#39;&gt;
+</code></pre></div>
+<p>How can we return not the matched object, but the string itself?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&#39;cat&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[A-Za-z][A-Za-z][A-Za-z]&#39;</span><span class="p">,</span> <span class="s1">&#39;The cat is on the mat&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&#39;The&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;waz{,5}up&quot;</span><span class="p">,</span> <span class="s1">&#39;wazzzup&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 7), match=&#39;wazzzup&#39;&gt;
+</code></pre></div>
+<h3 id="refindall">re.findall()<a class="headerlink" href="#refindall" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Return <strong>all</strong> non-overlapping matches of pattern in string, as a list of strings or tuples. The string is scanned left-to-right, and matches are returned in the order found. Empty matches are included in the result. Returns a list of all matches.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;the&#39;, &#39;the&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&#39;the&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;a+b*c+&quot;</span><span class="p">,</span> <span class="s1">&#39;aabbbbc&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(0, 7), match=&#39;aabbbbc&#39;&gt;
+</code></pre></div>
+<p>Another important feature that can be used in patterns, is quantification. We can define the desired length of characters we search in the pattern:</p>
+<h6 id="Quantifiers">Quantifiers<a class="headerlink" href="#Quantifiers" title="Anchor link to this section for reference">⚓︎</a></h6>
+<ul>
+<li><strong>?</strong> — question mark indicates <em>zero or one</em> occurrences of the preceding character/group</li>
+<li><strong>*</strong> — asterisk indicates <em>zero or more</em> occurrences of the preceding character/group</li>
+<li><strong>+</strong> — plus indicates <em>one or more</em> occurrences of the preceding character/group</li>
+<li><strong>{n}</strong> — preceding character/group is matched exactly <em>n times</em></li>
+<li><strong>{n,}</strong> — preceding character/group is matched <em>n or more times</em></li>
+<li><strong>{,m</strong>} — preceding character/group is matched <em>up to m times</em></li>
+<li><strong>{n,m}</strong> — preceding item is matched <em>at least n times, but not more than m times</em></li>
+</ul>
+<p><strong>NB!</strong> Quantifiers <strong>.</strong> <strong>\</strong> <strong>*</strong> <strong>+</strong> etc. do not work inside [ ]</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[a-z]+&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;the&#39;, &#39;cat&#39;, &#39;is&#39;, &#39;on&#39;, &#39;the&#39;, &#39;mat&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[a-z]</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;the&#39;, &#39;cat&#39;, &#39;the&#39;, &#39;mat&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[a-z]*&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;the&#39;, &#39;&#39;, &#39;cat&#39;, &#39;&#39;, &#39;is&#39;, &#39;&#39;, &#39;on&#39;, &#39;&#39;, &#39;the&#39;, &#39;&#39;, &#39;mat&#39;, &#39;&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[a-z]?&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;t&#39;,
+ &#39;h&#39;,
+ &#39;e&#39;,
+ &#39;&#39;,
+ &#39;c&#39;,
+ &#39;a&#39;,
+ &#39;t&#39;,
+ &#39;&#39;,
+ &#39;i&#39;,
+ &#39;s&#39;,
+ &#39;&#39;,
+ &#39;o&#39;,
+ &#39;n&#39;,
+ &#39;&#39;,
+ &#39;t&#39;,
+ &#39;h&#39;,
+ &#39;e&#39;,
+ &#39;&#39;,
+ &#39;m&#39;,
+ &#39;a&#39;,
+ &#39;t&#39;,
+ &#39;&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Mission: successful</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="s1">Last Mission: unsuccessful  To be completed</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="s1">Next Mission: successful upon capture of target</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="s1">Mission: successful upon capture</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;^Mission: successful$&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;Mission: successful&#39;]
+</code></pre></div>
+<h6 id="Lazy--and-possessivegreedy-matching">Lazy  and possessive/greedy matching<a class="headerlink" href="#Lazy--and-possessivegreedy-matching" title="Anchor link to this section for reference">⚓︎</a></h6>
+<p>Quantifiers are greedy by default. It means that they match the longest substring that matches the search they can find. In other words, they consume as many characters as possible. For example, we want to extract all substrings inside quotes from the string <code>'a "witch" and her "broom" is one'</code>. If we use the following pattern: <code>".+"</code>, we will get the following result:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;a &quot;witch&quot; and her &quot;broom&quot; is one&#39;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;&quot;.+&quot;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;&quot;witch&quot; and her &quot;broom&quot;&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="s1">&#39;&quot;.+&quot;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;re.Match object; span=(2, 25), match=&#39;&quot;witch&quot; and her &quot;broom&quot;&#39;&gt;
+</code></pre></div>
+<p>Maximum number of symbols between the first quotation mark and the last quotation mark is 21. Our greedy matching got this substring instead of "witch" and "broom". In order to retrive shorter substrings we should make our quantifier to <strong>non-greedy</strong> (or <strong>lazy</strong>) by adding quotation mark '?'.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;&quot;.+?&quot;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;&quot;witch&quot;&#39;, &#39;&quot;broom&quot;&#39;]
+</code></pre></div>
+<p>This operation can be applied to all quantifiers.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Greedy quantifiers</th>
+<th align="left">Lazy quantifiers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">*</td>
+<td align="left">*?</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td align="left">+?</td>
+</tr>
+<tr>
+<td align="left">{min, max}</td>
+<td align="left">{min, max}?</td>
+</tr>
+</tbody>
+</table>
+<h6 id="Escape-characters">Escape characters<a class="headerlink" href="#Escape-characters" title="Anchor link to this section for reference">⚓︎</a></h6>
+<p>The usual metacharacters are <code>{}[]()^$.|*+?</code> and <code>\</code>, however they do not have their literal character meaning. But what if we need to find such symbols in the text? For instance, we want to find all sentences, ending with quotation mark. The answer is as follows: we need to "escape" them, i.o.w. add <strong>\</strong> before such characters.</p>
+<p>Let us retrieve emojis from tweets:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">tweet</span> <span class="o">=</span> <span class="s1">&#39;have a good day :)&#39;</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[:\)\(]+&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;:)&#39;]
+</code></pre></div>
+<p>Or punctuation marks: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">tweet</span> <span class="o">=</span> <span class="s1">&#39;Дождь - это прекрасно, в дожде можно спрятать слезы...&#39;</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[\-\.!?:;,]|[.]+&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;-&#39;, &#39;,&#39;, &#39;.&#39;, &#39;.&#39;, &#39;.&#39;]
+</code></pre></div>
+<p>Here we used one more metacharacter: <strong>|</strong>  which means <strong>or</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">tweet</span> <span class="o">=</span> <span class="s1">&#39;Дождь - это прекрасно, в дожде можно спрятать слезы...&#39;</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[.]+|[\-\.!?:;,]&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;-&#39;, &#39;,&#39;, &#39;...&#39;]
+</code></pre></div>
+<p>Pay attention to the ellipsis (dot-dot-dot) in this example!</p>
+<p>Let us find formulae in the tweet:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">tweet</span> <span class="o">=</span> <span class="s1">&#39;Формула всем известная: (a+b)^2 = a^2 + 2*a*b + b^2&#39;</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;[\^\+\(\)=\-\* 0-9a-z]{2,}&#39;</span><span class="p">,</span> <span class="n">tweet</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39; (a+b)^2 = a^2 + 2*a*b + b^2&#39;]
+</code></pre></div>
+<p>Question: how to escape backslash <em>\</em>?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">tweet</span> <span class="o">=</span> <span class="s2">&quot;find \ here&quot;</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="c1">#Your code here</span>
+</code></pre></div>
+<h3 id="resub">re.sub()<a class="headerlink" href="#resub" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Return the string obtained by replacing the leftmost non-overlapping occurrences of pattern in string by the replacement repl. If the pattern isn’t found, string is returned unchanged. The method accapts three arguments:</p>
+<ul>
+<li>what to substitute</li>
+<li>on what to substitute</li>
+<li>where substittute</li>
+</ul>
+<p>All matched subsrings are replaced.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;my&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&#39;my cat is on my mat&#39;
+</code></pre></div>
+<p>Here are a few more metacharacters in RegExp:</p>
+<ul>
+<li><strong>\t</strong> — matches tabs</li>
+<li><strong>\s</strong> — matches a whitespace character</li>
+<li><strong>\S</strong> — matches anything but a whitespace</li>
+<li><strong>\n</strong> — new line</li>
+<li><strong>^</strong> — start of line</li>
+<li><strong>$</strong> — end of line</li>
+</ul>
+<p>Let us delete extra spaces from the following text:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">s</span>  <span class="o">=</span> <span class="s1">&#39;а  я иду,     шагаю   по   Москве &#39;</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39; +&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&#39;а я иду, шагаю по Москве &#39;
+</code></pre></div>
+<p>Or let us bring an excerpt of the play to a readable form:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="s1">Дездемона: </span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="s1">Кто здесь? Отелло, ты?</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="s1">Отелло: </span>
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="s1">Я, Дездемона. </span>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>
+<a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a><span class="s1">Дездемона: </span>
+<a id="__codelineno-36-11" name="__codelineno-36-11" href="#__codelineno-36-11"></a>
+<a id="__codelineno-36-12" name="__codelineno-36-12" href="#__codelineno-36-12"></a><span class="s1">Что ж не идешь ложиться ты, мой друг?</span>
+<a id="__codelineno-36-13" name="__codelineno-36-13" href="#__codelineno-36-13"></a>
+<a id="__codelineno-36-14" name="__codelineno-36-14" href="#__codelineno-36-14"></a><span class="s1">Отелло:</span>
+<a id="__codelineno-36-15" name="__codelineno-36-15" href="#__codelineno-36-15"></a>
+<a id="__codelineno-36-16" name="__codelineno-36-16" href="#__codelineno-36-16"></a><span class="s1">Молилась ли ты на ночь, Дездемона?</span>
+<a id="__codelineno-36-17" name="__codelineno-36-17" href="#__codelineno-36-17"></a>
+<a id="__codelineno-36-18" name="__codelineno-36-18" href="#__codelineno-36-18"></a><span class="s1">Дездемона:</span>
+<a id="__codelineno-36-19" name="__codelineno-36-19" href="#__codelineno-36-19"></a>
+<a id="__codelineno-36-20" name="__codelineno-36-20" href="#__codelineno-36-20"></a><span class="s1">Да, милый мой.</span>
+<a id="__codelineno-36-21" name="__codelineno-36-21" href="#__codelineno-36-21"></a>
+<a id="__codelineno-36-22" name="__codelineno-36-22" href="#__codelineno-36-22"></a><span class="s1">&#39;&#39;&#39;</span>
+<a id="__codelineno-36-23" name="__codelineno-36-23" href="#__codelineno-36-23"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Дездемона:
+
+Кто здесь? Отелло, ты?
+
+Отелло:
+
+Я, Дездемона.
+
+Дездемона:
+
+Что ж не идешь ложиться ты, мой друг?
+
+Отелло:
+
+Молилась ли ты на ночь, Дездемона?
+
+Дездемона:
+
+Да, милый мой.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">+&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Дездемона: 
+Кто здесь? Отелло, ты?
+Отелло: 
+Я, Дездемона. 
+Дездемона: 
+Что ж не идешь ложиться ты, мой друг?
+Отелло:
+Молилась ли ты на ночь, Дездемона?
+Дездемона:
+Да, милый мой.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">s</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;:[ </span><span class="se">\n</span><span class="s1">]+&#39;</span><span class="p">,</span> <span class="s1">&#39;: &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Дездемона: Кто здесь? Отелло, ты?
+Отелло: Я, Дездемона. 
+Дездемона: Что ж не идешь ложиться ты, мой друг?
+Отелло: Молилась ли ты на ночь, Дездемона?
+Дездемона: Да, милый мой.
+</code></pre></div>
+<h3 id="recompile">re.compile()<a class="headerlink" href="#recompile" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>Compiles a regular expression pattern into a regular expression object, which can be used for all methods described above. Then ths object can be applied multiple times to different strings. Pros: we do not need to copy-paste patterns and program will work faster!</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># compile regexp to find cats</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="n">cats</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="c1"># now we can use this variable with any method</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="c1"># here we do not provide &quot;what to search/replace&quot; argument anymore </span>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">cats</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">cats</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;my cat is black, my cat is fat, my cat likes rats, rats are gray and fat&#39;</span><span class="p">))</span>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">cats</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>cat
+[&#39;cat&#39;, &#39;cat&#39;, &#39;cat&#39;]
+the dog is on the mat
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">cats</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="n">texts</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">,</span> <span class="s1">&#39;the cat is on the mat&#39;</span><span class="p">,</span> <span class="s1">&#39;my cat is black, my cat is fat, my cat likes rats, rats are gray and fat&#39;</span><span class="p">]</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">texts</span><span class="p">:</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">cats</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;cat&#39;]
+[&#39;cat&#39;]
+[&#39;cat&#39;, &#39;cat&#39;, &#39;cat&#39;]
+</code></pre></div>
+<h2 id="You-have-the-floor-now">You have the floor now!<a class="headerlink" href="#You-have-the-floor-now" title="Anchor link to this section for reference">⚓︎</a></h2>
+<p>Write a regexp to search for the different name of Søren Kierkegaard in Russian.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="s1">Киркегор - датский философ, богослов и писатель, один из предшественников экзистенциализма. </span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="s1">С. Кьеркегор окончил теологический факультет Копенгагенского университета в 1840 году. </span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="s1">Степень магистра получил в 1841 году, защитив диссертацию “О понятии иронии, с постоянным обращением к Сократу”, посвященную концепциям иронии у древнегреческих авторов и романтиков. </span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="s1">Работы С. Кьеркегора отличаются исключительной психологической точностью и глубиной. </span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="s1">Вклад в развистие философии, сделанный Кьеркегаардом. неоценим. </span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="s1">Сёрен Киркегаард: немецкое издание Сёрена Киркегаарда. </span>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a><span class="s1">Спецкурс “С. Керкегор и история христианства в XIX в.” посвящен датскому философу Серену Керкегору. </span>
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="s1">&#39;&#39;&#39;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">philosopher</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;К[иеь]е*ркег.+?рд?\w?\w?&quot;</span><span class="p">)</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">res</span> <span class="o">=</span> <span class="n">philosopher</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="n">res</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;Киркегор&#39;,
+ &#39;Кьеркегор&#39;,
+ &#39;Кьеркегора&#39;,
+ &#39;Кьеркегаардом&#39;,
+ &#39;Киркегаард&#39;,
+ &#39;Киркегаарда&#39;,
+ &#39;Керкегор&#39;,
+ &#39;Керкегору&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>8
+</code></pre></div>
+<p>Write REgExps to search for emails and phone numbers:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="err">!</span><span class="n">wget</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">check</span><span class="o">-</span><span class="n">certificate</span> <span class="s1">&#39;https://docs.google.com/uc?export=download&amp;id=1hcw1REIuEZRG-Qe234eFviR1nBNz9IkM&#39;</span> <span class="o">-</span><span class="n">O</span> <span class="n">instructions</span><span class="o">.</span><span class="n">txt</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="k">with</span> <span class="nb">open</span> <span class="p">(</span><span class="s1">&#39;instructions.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>ИНСТРУКЦИЯ ПО ОФОРМЛЕНИЮ ЦИФРОВОГО ПРОПУСКА
+
+Технические вопросы
+Как заказать пропуск в Москву при условии, что на даче интернет работает плохо? При звонке по номеру телефона: +7 (495) 777-7777 приходится очень долго ждать.
+В связи с большим количеством звонков время ожидания по номеру телефона: 8-495-777-77-77 может достигать нескольких минут. Кроме того, вы можете воспользоваться возможностью получить пропуск по СМС на короткий номер 7377.
+
+Списываются ли деньги при отправке СМС для получения пропуска?
+Нет. За СМС средства не списывают.
+
+Что делать если сайт не доступен, а при звонке на телефон: 84957777777 сеть занята?
+Обратиться на почту по адресу gosuslugi@mail.ru
+
+
+Как заказать оформленный пропуск на электронную почту через СМС?
+Для этого нужно отправить цель получения пропуска (в кавычках) и через пробел почту, например,
+&quot;для поездок на работу&quot;, golikova_t67@gmail.com
+&quot;для иных целей&quot;, natysik@ya.ru
+
+По любым вопросам пишите на круглосуточную линию поддержки support24@mos.ru.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="n">mails</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Your regexp here for emails&#39;</span><span class="p">)</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="n">mails</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;gosuslugi@mail.ru&#39;,
+ &#39;golikova_t67@gmail.com&#39;,
+ &#39;natysik@ya.ru&#39;,
+ &#39;support24@mos.ru&#39;]
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">phones</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;Your regexp here for phone numbers&#39;</span><span class="p">)</span>
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="n">phones</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>[&#39;+7 (495) 777-777&#39;, &#39;8-495-777-77-77&#39;, &#39;84957777777 &#39;]
+</code></pre></div>
+<h3 id="Result">Result:<a class="headerlink" href="#Result" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p>We have learned how to use regular expressions for searching and substitutions in the text.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../readme/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Main Page" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Main Page
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../1_2_preprocessing/" class="md-footer__link md-footer__link--next" aria-label="Next: 1 2 preprocessing" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              1 2 preprocessing
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "instant", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+    
+  </body>
+</html>
