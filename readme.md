@@ -14,8 +14,8 @@
 | 17.09.2022 | 19:40-21:00 | Seminar 02 | Векторные представления слов | [репозиторий](https://github.com/milaMarkel/NLP2022/tree/main/Week%2002%20-%20Word%20Embeddings), [видео](https://youtu.be/0PJDoVwB-Ng) | 1,2 |
 | 17.09.2022 | |  | Векторные представления слов | [Quiz](https://forms.gle/9Yo9pdWJ2mAkQ2Po8) | 1,2 |
 | 22.09.2022 | 18:10-19:30 | Lecture 03 | Классификация| [конспект](https://artemova.notion.site/d4ee7823399c47de9ebd6f2cb15cdb73), [видео](https://youtu.be/5giGop-UADU)| 1,2 |
-| 22.09.2022 | 19:40-21:00 | Seminar 03 | Классификация | [classification.ipynb](https://colab.research.google.com/drive/1m1a4_JEhe55IKxrwxeAXvTi1WUclTi3q?usp=sharing), [видео](https://youtu.be/j-9p0ENvEEQ) | 1,2 |
-| 22.09.2022 | 19:40-21:00 | Seminar 03 | Классификация | [classification.ipynb](https://colab.research.google.com/drive/1m1a4_JEhe55IKxrwxeAXvTi1WUclTi3q?usp=sharing), [видео](https://youtu.be/Y8kZfdu1MDQ) | 1,2 |
+| 22.09.2022 | 19:40-21:00 | Seminar 03 | Классификация | [classification.ipynb](https://github.com/milaMarkel/NLP2022/blob/main/Week%2003%20-%20Text%20Classification/sem3_cnn_classification.ipynb), [видео](https://youtu.be/j-9p0ENvEEQ) | 1,2 |
+| 22.09.2022 | 19:40-21:00 | Seminar 03 | Классификация | [classification.ipynb](https://github.com/milaMarkel/NLP2022/blob/main/Week%2003%20-%20Text%20Classification/sem3_cnn_classification.ipynb), [видео](https://youtu.be/Y8kZfdu1MDQ) | 1,2 |
 | 29.09.2022 | 18:10-19:30 | Lecture 04 | Языковые модели | [слайды](https://docs.google.com/presentation/d/1Xgxa1zapby5tN79xJM4A43yF_Ua9urlRTcqviv2G9Cc/edit?usp=sharing), [видео](https://youtu.be/kwK4pInW6tM)| 1,2 |
 | 29.09.2022 | 19:40-21:00 | Seminar 04 | Языковые модели | [lm.ipynb](https://colab.research.google.com/drive/18VXwwoIyGApkCc6tnsmFtKvqGQHVtdLt?usp=sharing), [видео](https://youtu.be/f2yAv6N_424) | 1,2 |
 | 29.09.2022 | 19:40-21:00 | Seminar 04 | Языковые модели | [lm.ipynb](https://colab.research.google.com/drive/18VXwwoIyGApkCc6tnsmFtKvqGQHVtdLt?usp=sharing), [видео](https://youtu.be/nnrVp1ZzxaA) | 1,2 |
