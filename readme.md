@@ -10,8 +10,8 @@
 | 08.09.2022 | 19:40-21:00 | Seminar 01 | Предобработка текста | [репозиторий](https://github.com/milaMarkel/NLP2022/tree/main/Week%2001%20-%20Introduction), [видео](https://youtu.be/aXITGSdUPA0)| 1,2 |
 | 08.09.2022 |             |           | Квиз про бэкграунд| [Quiz](https://docs.google.com/forms/d/e/1FAIpQLScGvDEJ15Le7B-Ti7LRIx9t7FfSwCaDh-j_n33zXfWuSZ-q1Q/viewform) | 1,2 |
 | 15.09.2022 | 18:10-19:30 | Lecture 02 | Векторные представления слов | [слайды](https://github.com/karpovilia/NLP2022/raw/main/Week%2002%20-%20Word%20Embeddings/02-WordEmbeddings.pdf), [видео](https://youtu.be/8TPcAxMlfTs) | 1,2 |
-| 15.09.2022 | 19:40-21:00 | Seminar 02 | Векторные представления слов | [репозиторий](https://github.com/karpovilia/NLP2022/tree/main/Seminar%2002%20-%20Word%20Embeddings), [видео](https://youtu.be/T4WrD69eUGY) | 1,2 |
-| 17.09.2022 | 19:40-21:00 | Seminar 02 | Векторные представления слов | [репозиторий](https://github.com/karpovilia/NLP2022/tree/main/Seminar%2002%20-%20Word%20Embeddings), [видео](https://youtu.be/0PJDoVwB-Ng) | 1,2 |
+| 15.09.2022 | 19:40-21:00 | Seminar 02 | Векторные представления слов | [репозиторий](https://github.com/milaMarkel/NLP2022/tree/main/Week%2002%20-%20Word%20Embeddings), [видео](https://youtu.be/T4WrD69eUGY) | 1,2 |
+| 17.09.2022 | 19:40-21:00 | Seminar 02 | Векторные представления слов | [репозиторий](https://github.com/milaMarkel/NLP2022/tree/main/Week%2002%20-%20Word%20Embeddings), [видео](https://youtu.be/0PJDoVwB-Ng) | 1,2 |
 | 17.09.2022 | |  | Векторные представления слов | [Quiz](https://forms.gle/9Yo9pdWJ2mAkQ2Po8) | 1,2 |
 | 22.09.2022 | 18:10-19:30 | Lecture 03 | Классификация| [конспект](https://artemova.notion.site/d4ee7823399c47de9ebd6f2cb15cdb73), [видео](https://youtu.be/5giGop-UADU)| 1,2 |
 | 22.09.2022 | 19:40-21:00 | Seminar 03 | Классификация | [classification.ipynb](https://colab.research.google.com/drive/1m1a4_JEhe55IKxrwxeAXvTi1WUclTi3q?usp=sharing), [видео](https://youtu.be/j-9p0ENvEEQ) | 1,2 |
