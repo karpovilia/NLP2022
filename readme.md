@@ -35,7 +35,7 @@
 | 24.11.2022 | 18:10-19:30 | Lecture 11 | seq2seq models | [slides](https://github.com/karpovilia/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/10_TS_2021.pdf), [video](https://youtu.be/jpaTTkGPSns) | 1,2 |
 | 24.11.2022 | 18:10-19:30 | Seminar 11 | Summarization | [Summarization.ipynb](https://github.com/milaMarkel/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/Summarization.ipynb), [video](https://youtu.be/7CD-wzZNEsE)| 1,2 |
 | 01.12.2022 | 18:10-19:30 | Lecture 12 | QA | [slides](https://github.com/milaMarkel/NLP2022/blob/main/Week%2012%20-%20QA/08_ODQA_2021.pdf), [video_pt2](https://youtu.be/8YrGzWrNfpY?t=1240), [video_pt2](https://youtu.be/sazqiULDpEo) | 1,2 |
-| 01.12.2022 | 18:10-19:30 | Seminar 12 | QA | [Question_Answering.ipynb](https://github.com/milaMarkel/NLP2022/blob/main/Week%2012%20-%20QA/Question_Answering.ipynb), [video](https://youtu.be/e8Wx9yFGBwc) | 1,2 |
+| 01.12.2022 | 18:10-19:30 | Seminar 12 | QA | [QA.ipynb](https://github.com/milaMarkel/NLP2022/blob/main/Week%2012%20-%20QA/Question_Answering.ipynb), [video](https://youtu.be/e8Wx9yFGBwc) | 1,2 |
 | 08.12.2022 | 18:10-19:30 | Lecture 13 | Model Compression |*nothing* | 1,2 |
 | 08.12.2022 | 18:10-19:30 | Seminar 13 | Model Compression |*nothing*  | 1,2 |
 | 15.12.2022 | 18:10-19:30 | Lecture 14 | Атаки на модели и интерпретация|*nothing* | 1,2 |
