@@ -1,0 +1,1412 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="../exam/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Описание курса - Глубинное обучение для текстовых данных</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Описание-курса" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Глубинное обучение для текстовых данных" class="md-header__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Глубинное обучение для текстовых данных
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Описание курса
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Описание курса
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../exam/" class="md-tabs__link">
+      Билеты к экзамену
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../readme/" class="md-tabs__link">
+      Main Page
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2002%20-%20Word%20Embeddings/main/" class="md-tabs__link">
+        Week 02   Word Embeddings
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2003%20-%20Text%20Classification/lec3/" class="md-tabs__link">
+        Week 03   Text Classification
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2004%20-%20Language%20Models/main/" class="md-tabs__link">
+        Week 04   Language Models
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2005%20-%20Machine%20Translation/mail/" class="md-tabs__link">
+        Week 05   Machine Translation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-tabs__link">
+        Week 13  Model Compression
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Глубинное обучение для текстовых данных" class="md-nav__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Глубинное обучение для текстовых данных
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Описание курса
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Описание курса
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Цели-освоения-курса" class="md-nav__link">
+    Цели освоения курса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Планируемые-результаты-обучения" class="md-nav__link">
+    Планируемые результаты обучения
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Технические-требования" class="md-nav__link">
+    Технические требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Программа-курса" class="md-nav__link">
+    Программа курса
+  </a>
+  
+    <nav class="md-nav" aria-label="Программа курса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-01-Введение-в-обработку-естественных-языков-и-предобработку-текстовых-данных" class="md-nav__link">
+    week 01 Введение в обработку естественных языков и предобработку текстовых данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-02-Векторные-представления-слов" class="md-nav__link">
+    week 02 Векторные представления слов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-03-Классификация-текстов" class="md-nav__link">
+    week 03 Классификация текстов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-04-Языковые-модели" class="md-nav__link">
+    week 04 Языковые модели
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-05-Модели-Seq2Seq" class="md-nav__link">
+    week 05 Модели Seq2Seq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-06-Модель-Трансформер" class="md-nav__link">
+    week 06 Модель Трансформер
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-07-Модель-BERT" class="md-nav__link">
+    week 07 Модель BERT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-07-Извлечение-информации-и-поиск" class="md-nav__link">
+    week 07 Извлечение информации и поиск
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-08-Извлечение-имен-собственных" class="md-nav__link">
+    week 08 Извлечение имен собственных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-09-Question-answering" class="md-nav__link">
+    week 09 Question answering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-10-Суммаризация-текстов" class="md-nav__link">
+    week 10 Суммаризация текстов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-11-Сжатие-моделей" class="md-nav__link">
+    week 11 Сжатие моделей
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-12-Атаки-на-модели-и-интерпретация" class="md-nav__link">
+    week 12 Атаки на модели и интерпретация
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Оценивание-по-курсу" class="md-nav__link">
+    Оценивание по курсу
+  </a>
+  
+    <nav class="md-nav" aria-label="Оценивание по курсу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Формула-оценивания" class="md-nav__link">
+    Формула оценивания
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Литература" class="md-nav__link">
+    Литература
+  </a>
+  
+    <nav class="md-nav" aria-label="Литература">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Рекомендуемая-основная-литература" class="md-nav__link">
+    Рекомендуемая основная литература
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Рекомендуемая-дополнительная-литература-обязательно" class="md-nav__link">
+    Рекомендуемая дополнительная литература (обязательно)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exam/" class="md-nav__link">
+        Билеты к экзамену
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../readme/" class="md-nav__link">
+        Main Page
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 02   Word Embeddings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 02   Word Embeddings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2002%20-%20Word%20Embeddings/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 03   Text Classification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 03   Text Classification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2003%20-%20Text%20Classification/lec3/" class="md-nav__link">
+        Lec3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 04   Language Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 04   Language Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2004%20-%20Language%20Models/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Week 05   Machine Translation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 05   Machine Translation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2005%20-%20Machine%20Translation/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Week 13  Model Compression
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Week 13  Model Compression
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-nav__link">
+        Quantization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/03%20-%20Knowledge%20Distillation/" class="md-nav__link">
+        Knowledge Distillation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/04%20Parameter%20sharing/" class="md-nav__link">
+        Parameter sharing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/05%20Matrix%20decomposition/" class="md-nav__link">
+        05 Matrix decomposition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/Index/" class="md-nav__link">
+        Model compression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/Neural%20Architecture%20Search%20%28NAS%29/" class="md-nav__link">
+        Neural Architecture Search (NAS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+          01. Pruning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          01. Pruning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/01%20-%20Pruning%20weights/" class="md-nav__link">
+        01   Pruning weights
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/02%20-%20Pruning%20neurons/" class="md-nav__link">
+        Pruning neurons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/03%20-%20Block%20Prunning/" class="md-nav__link">
+        03   Block Prunning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/04%20-%20Pruning%20heads%20and%20layers/" class="md-nav__link">
+        04   Pruning heads and layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/Index/" class="md-nav__link">
+        Pruning: sparsifying weight matrice
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Цели-освоения-курса" class="md-nav__link">
+    Цели освоения курса
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Планируемые-результаты-обучения" class="md-nav__link">
+    Планируемые результаты обучения
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Технические-требования" class="md-nav__link">
+    Технические требования
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Программа-курса" class="md-nav__link">
+    Программа курса
+  </a>
+  
+    <nav class="md-nav" aria-label="Программа курса">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#week-01-Введение-в-обработку-естественных-языков-и-предобработку-текстовых-данных" class="md-nav__link">
+    week 01 Введение в обработку естественных языков и предобработку текстовых данных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-02-Векторные-представления-слов" class="md-nav__link">
+    week 02 Векторные представления слов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-03-Классификация-текстов" class="md-nav__link">
+    week 03 Классификация текстов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-04-Языковые-модели" class="md-nav__link">
+    week 04 Языковые модели
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-05-Модели-Seq2Seq" class="md-nav__link">
+    week 05 Модели Seq2Seq
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-06-Модель-Трансформер" class="md-nav__link">
+    week 06 Модель Трансформер
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-07-Модель-BERT" class="md-nav__link">
+    week 07 Модель BERT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-07-Извлечение-информации-и-поиск" class="md-nav__link">
+    week 07 Извлечение информации и поиск
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-08-Извлечение-имен-собственных" class="md-nav__link">
+    week 08 Извлечение имен собственных
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-09-Question-answering" class="md-nav__link">
+    week 09 Question answering
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-10-Суммаризация-текстов" class="md-nav__link">
+    week 10 Суммаризация текстов
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-11-Сжатие-моделей" class="md-nav__link">
+    week 11 Сжатие моделей
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#week-12-Атаки-на-модели-и-интерпретация" class="md-nav__link">
+    week 12 Атаки на модели и интерпретация
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Оценивание-по-курсу" class="md-nav__link">
+    Оценивание по курсу
+  </a>
+  
+    <nav class="md-nav" aria-label="Оценивание по курсу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Формула-оценивания" class="md-nav__link">
+    Формула оценивания
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Литература" class="md-nav__link">
+    Литература
+  </a>
+  
+    <nav class="md-nav" aria-label="Литература">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Рекомендуемая-основная-литература" class="md-nav__link">
+    Рекомендуемая основная литература
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Рекомендуемая-дополнительная-литература-обязательно" class="md-nav__link">
+    Рекомендуемая дополнительная литература (обязательно)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="Описание-курса">Описание курса<a class="headerlink" href="#Описание-курса" title="Anchor link to this section for reference">⚓︎</a></h1>
+<p>Настоящая учебная дисциплина посвящена вопросам автоматической обработки текстов [natural language processing], области, находящейся на стыке таких дисциплин, как машинное обучение и лингвистика. Курс состоит из двух чатсей: базовой, в ходе которых будут введены основные концепции, и продвинутой, ориентированной на индустриальные технологии и на современные научные вопросы.
+As a result, students should:</p>
+<h2 id="Цели-освоения-курса">Цели освоения курса<a class="headerlink" href="#Цели-освоения-курса" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ol>
+<li>Изучение базовых задач и методов обработки и анализа текстов</li>
+<li>Изучение современных нейросетевых моделей для обработки и анализа текстов</li>
+<li>Освоение программных систем и инструментов для обработки и анализа текстов</li>
+</ol>
+<h2 id="Планируемые-результаты-обучения">Планируемые результаты обучения<a class="headerlink" href="#Планируемые-результаты-обучения" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ol>
+<li>Знать и применять базовые методы обработки и анализа текстов</li>
+<li>Знать этические аспекты обработки текстов</li>
+<li>Уметь решать задачи, связанные с моделированием языка</li>
+<li>Уметь решать специализированные задачи на текстовых данных</li>
+</ol>
+<h2 id="Технические-требования">Технические требования<a class="headerlink" href="#Технические-требования" title="Anchor link to this section for reference">⚓︎</a></h2>
+<ol>
+<li>Знакомство с фреймворком pytorch</li>
+</ol>
+<h2 id="Программа-курса">Программа курса<a class="headerlink" href="#Программа-курса" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h3 id="week-01-Введение-в-обработку-естественных-языков-и-предобработку-текстовых-данных">week 01 Введение в обработку естественных языков и предобработку текстовых данных<a class="headerlink" href="#week-01-Введение-в-обработку-естественных-языков-и-предобработку-текстовых-данных" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Круг задач NLP, ключевые концепции области.</li>
+<li>Токенизация, очистка текста, лемматизация</li>
+</ul>
+<h3 id="week-02-Векторные-представления-слов">week 02 Векторные представления слов<a class="headerlink" href="#week-02-Векторные-представления-слов" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Построение моделей векторного представления отдельных слов</li>
+<li>one hot encoding, </li>
+</ul>
+<h3 id="week-03-Классификация-текстов">week 03 Классификация текстов<a class="headerlink" href="#week-03-Классификация-текстов" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Задача классификации последовательности.</li>
+<li>Свёрточные нейронные сети в классификации текстов.</li>
+<li>Метрики качества классификации</li>
+</ul>
+<h3 id="week-04-Языковые-модели">week 04 Языковые модели<a class="headerlink" href="#week-04-Языковые-модели" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Задача Representation Learning</li>
+<li>Метрики качества языковых моделей</li>
+<li>Рекуррентные нейронные сети в обработке текстов</li>
+<li>LSTM и GRU ячейки</li>
+</ul>
+<h3 id="week-05-Модели-Seq2Seq">week 05 Модели Seq2Seq<a class="headerlink" href="#week-05-Модели-Seq2Seq" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Концепция внимания</li>
+<li>Рекуррентные сети с вниманием, </li>
+</ul>
+<h3 id="week-06-Модель-Трансформер">week 06 Модель Трансформер<a class="headerlink" href="#week-06-Модель-Трансформер" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Модель Трансформер</li>
+</ul>
+<h3 id="week-07-Модель-BERT">week 07 Модель BERT<a class="headerlink" href="#week-07-Модель-BERT" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Модель BERT</li>
+</ul>
+<h3 id="week-07-Извлечение-информации-и-поиск">week 07 Извлечение информации и поиск<a class="headerlink" href="#week-07-Извлечение-информации-и-поиск" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Извлечение информации и информационный поиск</li>
+</ul>
+<h3 id="week-08-Извлечение-имен-собственных">week 08 Извлечение имен собственных<a class="headerlink" href="#week-08-Извлечение-имен-собственных" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Извлечение имен собственных</li>
+</ul>
+<h3 id="week-09-Question-answering">week 09 Question answering<a class="headerlink" href="#week-09-Question-answering" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Вопрос-ответные системы для русского и английского языка</li>
+<li>Zero и Few shot learning</li>
+</ul>
+<h3 id="week-10-Суммаризация-текстов">week 10 Суммаризация текстов<a class="headerlink" href="#week-10-Суммаризация-текстов" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Суммаризация текстов, генеративная и абстрактивная модели</li>
+</ul>
+<h3 id="week-11-Сжатие-моделей">week 11 Сжатие моделей<a class="headerlink" href="#week-11-Сжатие-моделей" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Сжатие моделей, Pruning и дистиляция</li>
+</ul>
+<h3 id="week-12-Атаки-на-модели-и-интерпретация">week 12 Атаки на модели и интерпретация<a class="headerlink" href="#week-12-Атаки-на-модели-и-интерпретация" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ul>
+<li>Атаки на модели и интерпретация.</li>
+</ul>
+<h2 id="Оценивание-по-курсу">Оценивание по курсу<a class="headerlink" href="#Оценивание-по-курсу" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h3 id="Формула-оценивания">Формула оценивания<a class="headerlink" href="#Формула-оценивания" title="Anchor link to this section for reference">⚓︎</a></h3>
+<p><code>Итоговая оценка</code> = 0.3<em> среднее(<code>Домашняя работа</code>) + 0.2</em> среднее(<code>Квизы</code>) + 0.5<em><code>Экзамен</code>.
+- Правила округления – арифметические
+- Предусмотрены ли автоматы. Да
+- Условия для выставления автомата: Если = 0.3</em> среднее(Домашняя работа) + 0.2*среднее(Квизы) &gt; 4, то выставляется автомат, при этом накопленная оценка удваивается.
+- Особенности пересдачи. Нет</p>
+<h2 id="Литература">Литература<a class="headerlink" href="#Литература" title="Anchor link to this section for reference">⚓︎</a></h2>
+<h3 id="Рекомендуемая-основная-литература">Рекомендуемая основная литература<a class="headerlink" href="#Рекомендуемая-основная-литература" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ol>
+<li>Manning, C. D., &amp; Schèutze, H. (1999). Foundations of Statistical Natural Language Processing. Cambridge, Mass: The MIT Press. </li>
+</ol>
+<h3 id="Рекомендуемая-дополнительная-литература-обязательно">Рекомендуемая дополнительная литература (обязательно)<a class="headerlink" href="#Рекомендуемая-дополнительная-литература-обязательно" title="Anchor link to this section for reference">⚓︎</a></h3>
+<ol>
+<li>Shay Cohen. (2019). Bayesian Analysis in Natural Language Processing : Second Edition. San Rafael: Morgan &amp; Claypool Publishers.</li>
+<li>Ian Goodfellow, Yoshua Bengio, and Aaron Courville. Deep Learning</li>
+<li>Dan Jurafsky and James H. Martin. Speech and Language Processing (3rd ed. draft)</li>
+<li>Delip Rao and Brian McMahan. Natural Language Processing with PyTorch</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

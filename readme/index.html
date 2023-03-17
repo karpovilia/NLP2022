@@ -1,0 +1,1229 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../exam/">
+      
+      
+        <link rel="next" href="../Week%2002%20-%20Word%20Embeddings/main/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Main Page - Глубинное обучение для текстовых данных</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Main-Page" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Глубинное обучение для текстовых данных" class="md-header__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Глубинное обучение для текстовых данных
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Main Page
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../course_description/" class="md-tabs__link">
+      Описание курса
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../exam/" class="md-tabs__link">
+      Билеты к экзамену
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Main Page
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2002%20-%20Word%20Embeddings/main/" class="md-tabs__link">
+        Week 02   Word Embeddings
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2003%20-%20Text%20Classification/lec3/" class="md-tabs__link">
+        Week 03   Text Classification
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2004%20-%20Language%20Models/main/" class="md-tabs__link">
+        Week 04   Language Models
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2005%20-%20Machine%20Translation/mail/" class="md-tabs__link">
+        Week 05   Machine Translation
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-tabs__link">
+        Week 13  Model Compression
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Глубинное обучение для текстовых данных" class="md-nav__button md-logo" aria-label="Глубинное обучение для текстовых данных" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Глубинное обучение для текстовых данных
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course_description/" class="md-nav__link">
+        Описание курса
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exam/" class="md-nav__link">
+        Билеты к экзамену
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Main Page
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Week 02   Word Embeddings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Week 02   Word Embeddings
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2002%20-%20Word%20Embeddings/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Week 03   Text Classification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Week 03   Text Classification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2003%20-%20Text%20Classification/lec3/" class="md-nav__link">
+        Lec3
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Week 04   Language Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Week 04   Language Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2004%20-%20Language%20Models/main/" class="md-nav__link">
+        Main
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Week 05   Machine Translation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Week 05   Machine Translation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2005%20-%20Machine%20Translation/mail/" class="md-nav__link">
+        Mail
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Week 13  Model Compression
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Week 13  Model Compression
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/02%20-%20Quantization/" class="md-nav__link">
+        Quantization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/03%20-%20Knowledge%20Distillation/" class="md-nav__link">
+        Knowledge Distillation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/04%20Parameter%20sharing/" class="md-nav__link">
+        Parameter sharing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/05%20Matrix%20decomposition/" class="md-nav__link">
+        05 Matrix decomposition
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/Index/" class="md-nav__link">
+        Model compression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/Neural%20Architecture%20Search%20%28NAS%29/" class="md-nav__link">
+        Neural Architecture Search (NAS)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+          01. Pruning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8_7">
+          <span class="md-nav__icon md-icon"></span>
+          01. Pruning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/01%20-%20Pruning%20weights/" class="md-nav__link">
+        01   Pruning weights
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/02%20-%20Pruning%20neurons/" class="md-nav__link">
+        Pruning neurons
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/03%20-%20Block%20Prunning/" class="md-nav__link">
+        03   Block Prunning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/04%20-%20Pruning%20heads%20and%20layers/" class="md-nav__link">
+        04   Pruning heads and layers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Week%2013%20-Model%20Compression/01.%20Pruning/Index/" class="md-nav__link">
+        Pruning: sparsifying weight matrice
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="Main-Page">Main Page<a class="headerlink" href="#Main-Page" title="Anchor link to this section for reference">⚓︎</a></h1>
+<ul>
+<li><a href="../course_description/">Описание курса</a></li>
+<li><a href="https://karpovilia.github.io/NLP2022/readme/">Страница курса</a></li>
+</ul>
+<h1 id="Расписание">Расписание<a class="headerlink" href="#Расписание" title="Anchor link to this section for reference">⚓︎</a></h1>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Time</th>
+<th>Activity</th>
+<th>Topic</th>
+<th>Materials</th>
+<th>Group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08.09.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 01</td>
+<td>Введение в анализ текстов, препроцессинг</td>
+<td><a href="https://github.com/karpovilia/NLP2022/raw/main/Week%2001%20-%20Introduction/01-intro.pdf">слайды</a> <a href="https://youtu.be/97woeNchw6E">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>08.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 01</td>
+<td>Предобработка текста</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/tree/main/Week%2001%20-%20Introduction">репозиторий</a>, <a href="https://youtu.be/aXITGSdUPA0">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>08.09.2022</td>
+<td></td>
+<td></td>
+<td>Квиз про бэкграунд</td>
+<td><a href="https://docs.google.com/forms/d/e/1FAIpQLScGvDEJ15Le7B-Ti7LRIx9t7FfSwCaDh-j_n33zXfWuSZ-q1Q/viewform">Quiz</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>15.09.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 02</td>
+<td>Векторные представления слов</td>
+<td><a href="https://github.com/karpovilia/NLP2022/raw/main/Week%2002%20-%20Word%20Embeddings/02-WordEmbeddings.pdf">слайды</a>, <a href="https://youtu.be/8TPcAxMlfTs">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>15.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 02</td>
+<td>Векторные представления слов</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/tree/main/Week%2002%20-%20Word%20Embeddings">репозиторий</a>, <a href="https://youtu.be/T4WrD69eUGY">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>17.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 02</td>
+<td>Векторные представления слов</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/tree/main/Week%2002%20-%20Word%20Embeddings">репозиторий</a>, <a href="https://youtu.be/0PJDoVwB-Ng">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>17.09.2022</td>
+<td></td>
+<td></td>
+<td>Векторные представления слов</td>
+<td><a href="https://forms.gle/9Yo9pdWJ2mAkQ2Po8">Quiz</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>22.09.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 03</td>
+<td>Классификация</td>
+<td><a href="https://artemova.notion.site/d4ee7823399c47de9ebd6f2cb15cdb73">конспект</a>, <a href="https://youtu.be/5giGop-UADU">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>22.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 03</td>
+<td>Классификация</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2003%20-%20Text%20Classification/sem3_cnn_classification.ipynb">classification.ipynb</a>, <a href="https://youtu.be/j-9p0ENvEEQ">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>22.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 03</td>
+<td>Классификация</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2003%20-%20Text%20Classification/sem3_cnn_classification.ipynb">classification.ipynb</a>, <a href="https://youtu.be/Y8kZfdu1MDQ">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>29.09.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 04</td>
+<td>Языковые модели</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2004%20-%20Language%20Models/%5Beng%5D%204-LM%20ki.pdf">слайды</a>, <a href="https://youtu.be/kwK4pInW6tM">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>29.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 04</td>
+<td>Языковые модели</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2004%20-%20Language%20Models/sem4_language_models_ner.ipynb">lm.ipynb</a>, <a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2004%20-%20Language%20Models/main.md">extra</a>, <a href="https://youtu.be/f2yAv6N_424">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>29.09.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 04</td>
+<td>Языковые модели</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2004%20-%20Language%20Models/sem4_language_models_ner.ipynb">lm.ipynb</a>, <a href="https://youtu.be/nnrVp1ZzxaA">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>06.10.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 05</td>
+<td>Машинный перевод</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2005%20-%20Machine%20Translation/%5Beng%5D%205-MT.pptx.pdf">слайды</a>, <a href="https://youtu.be/1nMEiiaQlkI">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>06.10.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 05</td>
+<td>Машинный перевод</td>
+<td><a href="https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing">seq2seq.ipynb</a> <strong>lost</strong>, <a href="https://youtu.be/8dZUzLUjIh0">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>06.10.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 05</td>
+<td>Машинный перевод</td>
+<td><a href="https://colab.research.google.com/drive/1cyFNWYSyPaeGzDgv8MB-DaRbv5t5WgEn?usp=sharing">seq2seq.ipynb</a> <strong>lost</strong>, <a href="https://youtu.be/QNO_MlI3uFo">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>13.10.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 06</td>
+<td>Transformer</td>
+<td><a href="https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&amp;ouid=112816606551634705121&amp;rtpof=true&amp;sd=true">слайды</a> <strong>lost</strong>, <a href="https://youtu.be/Z2IGr_C2IIs">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>13.10.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 06</td>
+<td>Transformer</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2006%20-%20Transformer/The_Annotated_Transformer_ki.ipynb">transformer.ipynb</a>, <a href="https://youtu.be/jrhJ261vq6A">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>20.10.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 07</td>
+<td>Bert</td>
+<td><a href="https://docs.google.com/presentation/d/1l1VschZkhTqGWxy1h1mvHKuUSnVSEG2O/edit?usp=sharing&amp;ouid=112816606551634705121&amp;rtpof=true&amp;sd=true">слайды</a> <strong>lost</strong>, <a href="https://youtu.be/N7c_nODNSvs">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>20.10.2022</td>
+<td>19:40-21:00</td>
+<td>Seminar 07</td>
+<td>Bert</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2007%20-%20Bert/BERT_ki.ipynb">BERT.ipynb</a>, <a href="https://youtu.be/Ka3fsJXah_M">видео</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>03.11.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 08</td>
+<td>Information Extraction</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/tree/main/Week%2008%20%E2%80%93%20Information%20Extraction">slides</a>, <a href="https://youtu.be/XwGcdiJUlDM">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>03.11.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 08</td>
+<td>Information Extraction</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2008%20%E2%80%93%20Information%20Extraction/ner_nli_year2021.ipynb">ipynb_<strong>lastY</strong></a>, bonus: <a href="https://colab.research.google.com/drive/1eLOAGvw9XD3tKAJuqPHkJtMrA-_G2Ay9?usp=sharing">spacy</a> <strong>lost</strong>, <a href="https://youtu.be/nFD-vyVOibM">video</a><strong>lost</strong></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>10.11.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 09</td>
+<td>Dialogue Systems 1</td>
+<td><a href="https://github.com/karpovilia/NLP2022/blob/main/Week%2009%20-%20Dialogue%20Systems%201/09_ToD_v2.pdf">notes</a>, <a href="https://youtu.be/-RTMSzkq79s">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>10.11.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 09</td>
+<td>Dialogue Systems 1</td>
+<td><a href="https://colab.research.google.com/drive/1G8h09s3wRROFUlRx2RZ7oUsdUV5LpCYi?usp=sharing">Dialog Systems</a> <strong>lost</strong>, <a href="https://colab.research.google.com/drive/1YOrbR9Akt_1JR0fl5DD1cxItvHygrzU-?usp=sharing">GODEL</a> <strong>lost</strong>, <a href="https://youtu.be/Q76lUaK1gg4">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>17.11.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 10</td>
+<td>Dialogue Systems 2</td>
+<td><a href="https://github.com/karpovilia/NLP2022/blob/main/Week%2010%20-%20Dialogue%20Systems%202/10_OpenDialogue.pdf">notes</a>, <a href="https://youtu.be/a61io8K3crg">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>17.11.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 10</td>
+<td>Dialogue Systems 2</td>
+<td><a href="https://colab.research.google.com/drive/1QVTUPYdzEOHV_YFVxux5mP-npLlpsr7L?usp=sharing">st</a> <strong>lost</strong>, <a href="https://colab.research.google.com/drive/165E3qLqBh-j23G_HJm0c2C7rNNwNOPfQ?usp=sharing">qa</a> <strong>lost</strong>, <a href="https://youtu.be/Hp_bB5RXqJw">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>24.11.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 11</td>
+<td>seq2seq models</td>
+<td><a href="https://github.com/karpovilia/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/10_TS_2021.pdf">slides</a>, <a href="https://youtu.be/jpaTTkGPSns">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>24.11.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 11</td>
+<td>Summarization</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2011%20-%20seq2seq%20models/Summarization.ipynb">Summarization.ipynb</a>, <a href="https://youtu.be/7CD-wzZNEsE">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>01.12.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 12</td>
+<td>QA</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2012%20-%20QA/08_ODQA_2021.pdf">slides</a>, <a href="https://youtu.be/8YrGzWrNfpY?t=1240">video_pt1</a>, <a href="https://youtu.be/sazqiULDpEo">video_pt2</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>01.12.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 12</td>
+<td>QA</td>
+<td><a href="https://github.com/milaMarkel/NLP2022/blob/main/Week%2012%20-%20QA/Question_Answering.ipynb">QA.ipynb</a>, <a href="https://youtu.be/e8Wx9yFGBwc">video</a></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>08.12.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 13</td>
+<td>Model Compression</td>
+<td><em>nothing</em></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>08.12.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 13</td>
+<td>Model Compression</td>
+<td><em>nothing</em></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>15.12.2022</td>
+<td>18:10-19:30</td>
+<td>Lecture 14</td>
+<td>Атаки на модели и интерпретация</td>
+<td><em>nothing</em></td>
+<td>1,2</td>
+</tr>
+<tr>
+<td>15.12.2022</td>
+<td>18:10-19:30</td>
+<td>Seminar 14</td>
+<td>Атаки на модели и интерпретация</td>
+<td><em>nothing</em></td>
+<td>1,2</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "instant", "navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
